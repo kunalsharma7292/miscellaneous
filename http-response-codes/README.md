@@ -53,7 +53,7 @@
 | 405          | Method Not Allowed | GET, POST, PATCH, DELETE | Eg: Calling GET API with POST method. In SPring Dispatcher Servlet might throw this error, as request does not even reach to controller. |
 | 422          | Un-processable Entity | GET, POST, PATCH, DELETE | Some business validation. Like Users outside India are not to register on website(other country not supported for now). Note request is proper here - but business logic fails |
 | 429          | Too Many Requests | GET, POST, PATCH, DELETE | Rate Limiting - in case request limit is reached throw this error |
-| 409          | 429 | POST, PATCH, DELETE | If one request is in progess(say Path: /user/123) then same request made by other user will fail with 409 conflict. This can be achieved using locking mechanism either in cache or at DB level. |
+| 409          | Conflict | POST, PATCH, DELETE | If one request is in progess(say Path: /user/123) then same request made by other user will fail with 409 conflict. This can be achieved using locking mechanism either in cache or at DB level. |
 
 ## 5xx: Server Errors
 - Request fot failed at Server, even though client request was valid . Means something wrong at server.
